@@ -1,0 +1,53 @@
+From 3b93a4ec9ad0ff25a0533dc32f381b29c4de1731 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 11 Aug 2024 19:54:06 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt                    | 2 +-
+ lib/src/fontsourcecodegenerator.h | 2 +-
+ lib/src/format.h                  | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index bc40300..7fb4f0f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -12,7 +12,7 @@ set(APP_YEAR 2020)
+ set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+-set(BUILD_TESTS ON)
++set(BUILD_TESTS OFF)
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+ 
+ find_package(Qt5 COMPONENTS Widgets REQUIRED)
+diff --git a/lib/src/fontsourcecodegenerator.h b/lib/src/fontsourcecodegenerator.h
+index bce38a6..7b8121c 100644
+--- a/lib/src/fontsourcecodegenerator.h
++++ b/lib/src/fontsourcecodegenerator.h
+@@ -9,7 +9,7 @@
+ #include <sstream>
+ #include <bitset>
+ #include <algorithm>
+-
++#include <cstdint>
+ namespace f2b
+ {
+ 
+diff --git a/lib/src/format.h b/lib/src/format.h
+index ba5b831..0548a95 100644
+--- a/lib/src/format.h
++++ b/lib/src/format.h
+@@ -5,7 +5,7 @@
+ #include <iostream>
+ #include <iomanip>
+ #include "sourcecode.h"
+-
++#include <cstdint>
+ namespace f2b
+ {
+ 
+-- 
+2.43.4
+
