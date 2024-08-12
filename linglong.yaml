@@ -1,0 +1,32 @@
+version: "1"
+
+package:
+  id: io.github.fontedit
+  name: fontedit
+  version: 0.1.1.1
+  kind: app
+  description: |
+    A desktop app to import, edit and export fonts as byte arrays for use in embedded systems
+
+command:
+  - /opt/apps/io.github.fontedit/files/bin/fontedit
+
+base: org.deepin.foundation/23.0.0
+runtime: org.deepin.Runtime/23.0.1
+
+sources:
+  - kind: git
+    url: https://github.com/ayoy/fontedit.git
+    version: master
+    commit: 9fdf7bfce5073806a1369a86c2e19b0262e3f027
+
+build: |
+  cd /project/linglong/sources/fontedit.git
+  git apply ../../../0001-install.patch
+  mkdir build
+  cd build
+  cmake .. \
+        -DCMAKE_INSTALL_PREFIX=${PREFIX}
+  cmake --build . --target install
+
+
